@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="../static/css/table.css">
+
+	<title>Users</title>
+</head>
+<body>
+	<div class="main">
+		{% with messages = get_flashed_messages() %}
+			   {% if messages %}
+			      {% for message in messages %}
+			         {{ message }}
+			      {% endfor %}
+			   {% endif %}
+			{% endwith %}
+		<form method="POST" class="form">
+
+			<label for="user_id">User id</label>
+			<input type="text" name="user_id">
+
+			<button>Delete</button>
+		</form>
+	</div>
+	<table class="table">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+		</tr>
+		{% for row in data %}
+		<tr>
+			{% for cell in row[0:-1] %}
+			<td id="{{ cell }}">{{ cell }}</td>
+			{% endfor %}
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

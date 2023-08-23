@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="../static/css/sign_up.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
+	<title>Sign up</title>
+</head>
+<body>
+	<div class="header">
+		<div class="login-form">
+			<form method="POST" class="form">
+				<div>
+					<h3 class="form-text">Registration</h3>
+				</div>
+
+				{% with messages = get_flashed_messages() %}
+				   {% if messages %}
+				      {% for message in messages %}
+				         {{ message }}
+				      {% endfor %}
+				   {% endif %}
+				{% endwith %}
+
+
+				<div>
+					<label class="form-label" for="login">Login</label>
+					<input class="form-input" type="text" id="login" name="login">
+				</div>
+
+				<div>
+					<label class="form-label" for="password">Password</label>
+					<input class="form-input" type="password" id="login" name="password">
+				</div>
+
+				<div class="form-button">
+					<button>Sign up</button>
+				</div>
+
+				<div class="form-other">
+					<a href="sign_in">Sign in</a>
+					<a href="mp">Main page</a>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>
